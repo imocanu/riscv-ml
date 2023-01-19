@@ -1,0 +1,40 @@
+#!/bin/bash
+
+set -e
+cd `dirname $0`
+
+./mk-sd-image
+
+# --- copy SD card image to physical media ---
+
+SD_IMG=debian-riscv64/debian-riscv64.sd.img
+
+for DEVICE in `ls /dev/disk/by-path/*-usb-*-scsi-*` ; do
+  case $DEVICE in
+  *-part*)
+    continue
+    ;;
+  esac
+  echo
+  echo
+  DEVICE=`realpath $DEVICE`
+  echo "Copy disk image to:"
+  sudo sfdisk -l $DEVICE
+  read -r -p "Are you sure? [y/N] " response
+  case "$response" in
+  [yY][eE][sS]|[yY])
+    sudo dd if=$SD_IMG of=$DEVICE bs=64K status=progress
+    sudo sync
+    sudo partprobe ${DEVICE}
+    echo ", +" | sudo sfdisk -N 2 ${DEVICE}
+    sudo partprobe ${DEVICE}
+    sudo fsck -f ${DEVICE}2
+    sudo resize2fs ${DEVICE}2
+    sudo sync
+    break
+    ;;
+  *)
+    continue
+    ;;
+  esac
+done

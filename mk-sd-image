@@ -1,0 +1,149 @@
+#!/bin/bash
+
+set -e
+cd -P `dirname $0`
+
+SD_SIZE=1500
+SD_BOOT_SIZE=64
+SD_SWAP_SIZE=
+SD_IMG=debian-riscv64/debian-riscv64.sd.img
+RSYNC_BOOT=
+
+while getopts r:s:b:p:i: name ; do
+  case $name in
+  r)
+    RSYNC_BOOT=$OPTARG
+    ;;
+  s)
+    SD_SIZE=$OPTARG
+    ;;
+  b)
+    SD_BOOT_SIZE=$OPTARG
+    ;;
+  p)
+    SD_SWAP_SIZE=$OPTARG
+    ;;
+  i)
+    SD_IMG=$OPTARG
+    ;;
+  esac
+done
+
+# if [ ! -d linux/kernel ] ; then
+#   make update-submodules
+# fi
+
+KERNEL_VER=$(cd linux && git describe --exact-match --abbrev=0)
+
+# --- Retrive Debian disk image ---
+
+make debian-riscv64/initrd debian-riscv64/rootfs.tar.gz
+
+# --- Build BBL and Linux ---
+
+if [ ! -f workspace/boot.elf ] ; then
+  make bootloader
+fi
+if [ ! -f linux/arch/riscv/boot/Image ] ; then
+  make linux
+fi
+
+# --- build SD card image ---
+
+mount -l | grep `pwd`/ | while IFS=' ' read -ra LINE ; do
+  sudo umount ${LINE[0]}
+done
+losetup -a | grep `pwd`/ | while IFS=':' read -ra LINE ; do
+  sudo losetup -d ${LINE[0]}
+done
+losetup -a | grep `pwd`/ | while IFS=':' read -ra LINE ; do
+  echo "Cannot detach ${LINE[*]}"
+  exit 1
+done
+
+rm -f $SD_IMG
+dd if=/dev/zero of=$SD_IMG bs=1M count=$SD_SIZE
+sudo losetup -f $SD_IMG
+
+SD_LOOP=$(
+losetup -a | grep `pwd`/ | while IFS=':' read -ra LINE ; do
+  echo ${LINE[0]}
+done
+)
+
+echo "SD image device: ${SD_LOOP}"
+
+sudo sfdisk --no-tell-kernel ${SD_LOOP} <<-__EOF__
+1M,${SD_BOOT_SIZE}M,0xE,*
+,,,-
+__EOF__
+
+sudo partprobe ${SD_LOOP}
+
+UUID=68d82fa1-1bb5-435f-a5e3-862176586eec
+sudo mkfs.vfat -F 16 -n BOOT ${SD_LOOP}p1
+sudo mkfs.ext4 -E nodiscard -L rootfs -U $UUID ${SD_LOOP}p2
+
+cat >debian-riscv64/extlinux.conf <<EOF
+menu title RISC-V Boot Options.
+timeout 50
+default Debain $KERNEL_VER
+label Debain $KERNEL_VER
+ kernel /extlinux/image-$KERNEL_VER
+ initrd /extlinux/initrd-$KERNEL_VER.img
+ append ro root=UUID=$UUID earlycon initramfs.runsize=24M locale.LANG=en_US.UTF-8
+EOF
+
+mkdir -p debian-riscv64/boot
+mkdir -p debian-riscv64/rootfs
+
+sudo mount ${SD_LOOP}p1 debian-riscv64/boot
+sudo mount ${SD_LOOP}p2 debian-riscv64/rootfs
+
+pushd debian-riscv64/rootfs
+  if [ -z "$SD_SWAP_SIZE" ] ; then
+    sudo tar xzf ../rootfs.tar.gz
+  else
+    sudo tar --exclude=swapfile -xzf ../rootfs.tar.gz
+    sudo fallocate -l ${SD_SWAP_SIZE}M swapfile
+    sudo chmod 600 swapfile
+    sudo mkswap swapfile
+  fi
+popd
+
+pushd debian-riscv64/boot
+  sudo mkdir extlinux
+  sudo cp ../extlinux.conf extlinux
+  sudo cp ../initrd extlinux/initrd-$KERNEL_VER.img
+  sudo cp ../../linux/arch/riscv/boot/Image extlinux/image-$KERNEL_VER
+  sudo cp ../../workspace/boot.elf boot.elf
+popd
+
+sudo chown root:root debian-riscv64/rootfs
+sudo chmod 755 debian-riscv64/rootfs
+
+echo
+echo "Boot partition:"
+df debian-riscv64/boot
+ls -l debian-riscv64/boot
+echo
+echo "Root partition:"
+df debian-riscv64/rootfs
+ls -l debian-riscv64/rootfs
+echo
+
+if [ ! -z "$RSYNC_BOOT" ] ; then
+  rsync -r --delete debian-riscv64/boot/ $RSYNC_BOOT
+fi
+
+# According to docs, don't need to run sync before umount.
+# umount will complete all pending writes before it actually unmounts the filesystem.
+# In reality, without sync, VFAT filesystem sometimes gets corrupted after umount.
+# Must be a Linux bug.
+sync
+
+sudo umount ${SD_LOOP}p1
+sudo umount ${SD_LOOP}p2
+sudo fsck -f -p -T ${SD_LOOP}p1 || true
+sudo fsck -f -p -T ${SD_LOOP}p2
+sudo losetup -d ${SD_LOOP}

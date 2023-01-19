@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jun 25 18:41:58 2022" VIVADOVERSION="2022.1">
+
+  <SYSTEMINFO ARCH="artix7" BOARD="qmtech:wukong:part0:1.0" DEVICE="7a100t" NAME="bd_a31f" PACKAGE="fgg676" SPEEDGRADE="-2"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="O" NAME="m0_bscan_bscanid_en" SIGIS="undef" SIGNAME="bs_switch_bscanid_en_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="bs_switch" PORT="bscanid_en_0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="m0_bscan_capture" SIGIS="undef" SIGNAME="bs_switch_capture_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="bs_switch" PORT="capture_0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="O" NAME="m0_bscan_drck" SIGIS="clk" SIGNAME="bs_switch_drck_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="bs_switch" PORT="drck_0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="m0_bscan_reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="bs_switch_reset_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="bs_switch" PORT="reset_0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="m0_bscan_runtest" SIGIS="undef" SIGNAME="bs_switch_runtest_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="bs_switch" PORT="runtest_0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="m0_bscan_sel" SIGIS="undef" SIGNAME="bs_switch_sel_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="bs_switch" PORT="sel_0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="m0_bscan_shift" SIGIS="undef" SIGNAME="bs_switch_shift_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="bs_switch" PORT="shift_0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="O" NAME="m0_bscan_tck" SIGIS="clk" SIGNAME="bs_switch_tck_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="bs_switch" PORT="tck_0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="m0_bscan_tdi" SIGIS="undef" SIGNAME="bs_switch_tdi_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="bs_switch" PORT="tdi_0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="m0_bscan_tdo" SIGIS="undef" SIGNAME="bs_switch_tdo_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="bs_switch" PORT="tdo_0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="m0_bscan_tms" SIGIS="undef" SIGNAME="bs_switch_tms_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="bs_switch" PORT="tms_0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="O" NAME="m0_bscan_update" SIGIS="clk" SIGNAME="bs_switch_update_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="bs_switch" PORT="update_0"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES>
+    <BUSINTERFACE BUSNAME="bs_switch_m0_bscan" NAME="m0_bscan" TYPE="INITIATOR">
+      <PORTMAPS>
+        <PORTMAP LOGICAL="BSCANID_en" PHYSICAL="m0_bscan_bscanid_en"/>
+        <PORTMAP LOGICAL="CAPTURE" PHYSICAL="m0_bscan_capture"/>
+        <PORTMAP LOGICAL="DRCK" PHYSICAL="m0_bscan_drck"/>
+        <PORTMAP LOGICAL="RESET" PHYSICAL="m0_bscan_reset"/>
+        <PORTMAP LOGICAL="RUNTEST" PHYSICAL="m0_bscan_runtest"/>
+        <PORTMAP LOGICAL="SEL" PHYSICAL="m0_bscan_sel"/>
+        <PORTMAP LOGICAL="SHIFT" PHYSICAL="m0_bscan_shift"/>
+        <PORTMAP LOGICAL="TCK" PHYSICAL="m0_bscan_tck"/>
+        <PORTMAP LOGICAL="TDI" PHYSICAL="m0_bscan_tdi"/>
+        <PORTMAP LOGICAL="TDO" PHYSICAL="m0_bscan_tdo"/>
+        <PORTMAP LOGICAL="TMS" PHYSICAL="m0_bscan_tms"/>
+        <PORTMAP LOGICAL="UPDATE" PHYSICAL="m0_bscan_update"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+  </EXTERNALINTERFACES>
+
+  <MODULES>
+    <MODULE COREREVISION="0" FULLNAME="/bs_switch" HWVERSION="1.0" INSTANCE="bs_switch" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="bs_switch" VLNV="xilinx.com:ip:bs_switch:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_USE_EXT_BSCAN" VALUE="0"/>
+        <PARAMETER NAME="C_ONLY_PRIMITIVE" VALUE="0"/>
+        <PARAMETER NAME="C_NUM_BS_MASTER" VALUE="1"/>
+        <PARAMETER NAME="C_XDEVICEFAMILY" VALUE="artix7"/>
+        <PARAMETER NAME="C_USER_SCAN_CHAIN" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="bd_a31f_bs_switch_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" NAME="drck_0" SIGIS="clk" SIGNAME="bs_switch_drck_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="bd_a31f_imp" PORT="m0_bscan_drck"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="reset_0" SIGIS="rst" SIGNAME="bs_switch_reset_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="bd_a31f_imp" PORT="m0_bscan_reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="sel_0" SIGIS="undef" SIGNAME="bs_switch_sel_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="bd_a31f_imp" PORT="m0_bscan_sel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="capture_0" SIGIS="undef" SIGNAME="bs_switch_capture_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="bd_a31f_imp" PORT="m0_bscan_capture"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="shift_0" SIGIS="undef" SIGNAME="bs_switch_shift_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="bd_a31f_imp" PORT="m0_bscan_shift"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="update_0" SIGIS="clk" SIGNAME="bs_switch_update_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="bd_a31f_imp" PORT="m0_bscan_update"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tdi_0" SIGIS="undef" SIGNAME="bs_switch_tdi_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="bd_a31f_imp" PORT="m0_bscan_tdi"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="runtest_0" SIGIS="undef" SIGNAME="bs_switch_runtest_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="bd_a31f_imp" PORT="m0_bscan_runtest"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tck_0" SIGIS="clk" SIGNAME="bs_switch_tck_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="bd_a31f_imp" PORT="m0_bscan_tck"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tms_0" SIGIS="undef" SIGNAME="bs_switch_tms_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="bd_a31f_imp" PORT="m0_bscan_tms"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="bscanid_en_0" SIGIS="undef" SIGNAME="bs_switch_bscanid_en_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="bd_a31f_imp" PORT="m0_bscan_bscanid_en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tdo_0" SIGIS="undef" SIGNAME="bs_switch_tdo_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="bd_a31f_imp" PORT="m0_bscan_tdo"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="bs_switch_m0_bscan" NAME="m0_bscan" TYPE="INITIATOR" VLNV="xilinx.com:interface:bscan:1.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="BSCANID_en" PHYSICAL="bscanid_en_0"/>
+            <PORTMAP LOGICAL="CAPTURE" PHYSICAL="capture_0"/>
+            <PORTMAP LOGICAL="DRCK" PHYSICAL="drck_0"/>
+            <PORTMAP LOGICAL="RESET" PHYSICAL="reset_0"/>
+            <PORTMAP LOGICAL="RUNTEST" PHYSICAL="runtest_0"/>
+            <PORTMAP LOGICAL="SEL" PHYSICAL="sel_0"/>
+            <PORTMAP LOGICAL="SHIFT" PHYSICAL="shift_0"/>
+            <PORTMAP LOGICAL="TCK" PHYSICAL="tck_0"/>
+            <PORTMAP LOGICAL="TDI" PHYSICAL="tdi_0"/>
+            <PORTMAP LOGICAL="TDO" PHYSICAL="tdo_0"/>
+            <PORTMAP LOGICAL="TMS" PHYSICAL="tms_0"/>
+            <PORTMAP LOGICAL="UPDATE" PHYSICAL="update_0"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

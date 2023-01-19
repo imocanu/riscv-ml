@@ -1,0 +1,176 @@
+/dts-v1/;
+
+/ {
+	#address-cells = <1>;
+	#size-cells = <1>;
+	compatible = "freechips,rocketchip-vivado-dev";
+	model = "freechips,rocketchip-vivado";
+	L18: cpus {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		timebase-frequency = <400000>;
+		L4: cpu@0 {
+			clock-frequency = <40000000>;
+			compatible = "sifive,rocket0", "riscv";
+			d-cache-block-size = <64>;
+			d-cache-sets = <64>;
+			d-cache-size = <16384>;
+			d-tlb-sets = <1>;
+			d-tlb-size = <32>;
+			device_type = "cpu";
+			hardware-exec-breakpoint-count = <8>;
+			i-cache-block-size = <64>;
+			i-cache-sets = <64>;
+			i-cache-size = <16384>;
+			i-tlb-sets = <1>;
+			i-tlb-size = <32>;
+			mmu-type = "riscv,sv39";
+			next-level-cache = <&L13>;
+			reg = <0x0>;
+			riscv,isa = "rv64imafdc";
+			riscv,pmpgranularity = <4>;
+			riscv,pmpregions = <8>;
+			status = "okay";
+			timebase-frequency = <400000>;
+			tlb-split;
+			L2: interrupt-controller {
+				#interrupt-cells = <1>;
+				compatible = "riscv,cpu-intc";
+				interrupt-controller;
+			};
+		};
+		L7: cpu@1 {
+			clock-frequency = <40000000>;
+			compatible = "sifive,rocket0", "riscv";
+			d-cache-block-size = <64>;
+			d-cache-sets = <64>;
+			d-cache-size = <16384>;
+			d-tlb-sets = <1>;
+			d-tlb-size = <32>;
+			device_type = "cpu";
+			hardware-exec-breakpoint-count = <8>;
+			i-cache-block-size = <64>;
+			i-cache-sets = <64>;
+			i-cache-size = <16384>;
+			i-tlb-sets = <1>;
+			i-tlb-size = <32>;
+			mmu-type = "riscv,sv39";
+			next-level-cache = <&L13>;
+			reg = <0x1>;
+			riscv,isa = "rv64imafdc";
+			riscv,pmpgranularity = <4>;
+			riscv,pmpregions = <8>;
+			status = "okay";
+			timebase-frequency = <400000>;
+			tlb-split;
+			L5: interrupt-controller {
+				#interrupt-cells = <1>;
+				compatible = "riscv,cpu-intc";
+				interrupt-controller;
+			};
+		};
+	};
+	L13: memory@80000000 {
+		device_type = "memory";
+		reg = <0x80000000 0x20000000>;
+	};
+	L17: soc {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "freechips,rocketchip-vivado-soc", "simple-bus";
+		ranges;
+		L9: clint@2000000 {
+			compatible = "riscv,clint0";
+			interrupts-extended = <&L2 3 &L2 7 &L5 3 &L5 7>;
+			reg = <0x2000000 0x10000>;
+			reg-names = "control";
+		};
+		L10: debug-controller@0 {
+			compatible = "sifive,debug-013", "riscv,debug-013";
+			debug-attach = "dmi";
+			reg = <0x0 0x1000>;
+			reg-names = "control";
+		};
+		L1: error-device@3000 {
+			compatible = "sifive,error0";
+			reg = <0x3000 0x1000>;
+		};
+		L12: external-interrupts {
+			interrupt-parent = <&L8>;
+			interrupts = <1 2 3 4 5 6 7 8>;
+		};
+		L8: interrupt-controller@c000000 {
+			#interrupt-cells = <1>;
+			compatible = "riscv,plic0";
+			interrupt-controller;
+			interrupts-extended = <&L2 11 &L2 9 &L5 11 &L5 9>;
+			reg = <0xc000000 0x4000000>;
+			reg-names = "control";
+			riscv,max-priority = <7>;
+			riscv,ndev = <8>;
+		};
+		L14: mmio-port-axi4@60000000 {
+			#address-cells = <1>;
+			#size-cells = <1>;
+			compatible = "simple-bus";
+			ranges = <0x60000000 0x60000000 0x20000000>;
+		};
+		L15: rom@10000 {
+			compatible = "sifive,rom0";
+			reg = <0x10000 0x10000>;
+			reg-names = "mem";
+		};
+		L0: subsystem_pbus_clock {
+			#clock-cells = <0>;
+			clock-frequency = <40000000>;
+			clock-output-names = "subsystem_pbus_clock";
+			compatible = "fixed-clock";
+		};
+	};
+};
+/ {
+
+    aliases {
+        serial0 = &uart0;
+    };
+
+    chosen {
+        stdout-path = "serial0";
+    };
+
+    io-bus {
+        #address-cells = <1>;
+        #size-cells = <1>;
+        compatible = "rocketchip-vivado-io", "simple-bus";
+        ranges;
+
+        uart0: uart@60010000 {
+            compatible = "riscv,axi-uart-1.0";
+            reg = <0x60010000 0x10000>;
+            interrupt-parent = <&{/soc/interrupt-controller@c000000}>;
+            interrupts = <1>;
+            port-number = <0>;
+        };
+
+        mmc: mmc0@60000000 {
+            compatible = "riscv,axi-sd-card-1.0";
+            clock = <100000000>;
+            reg = <0x60000000 0x10000>;
+            bus-width = <4>;
+            fifo-depth = <256>;
+            interrupt-parent = <&{/soc/interrupt-controller@c000000}>;
+            interrupts = <2>;
+            max-frequency = <12500000>;
+            cap-sd-highspeed;
+        };
+
+        eth: eth0@60020000 {
+            compatible = "riscv,axi-ethernet-1.0";
+            reg = <0x60020000 0x10000>;
+            phy-mode = "rgmii";
+            local-mac-address = [00 0a 35 00 00 01];
+            interrupt-parent = <&{/soc/interrupt-controller@c000000}>;
+            interrupts = <3>;
+        };
+    };
+};

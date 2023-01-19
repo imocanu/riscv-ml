@@ -1,0 +1,55 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x94CE7A9162D4D3BE",
+      "design_src": "SBD",
+      "device": "xc7a100tfgg676-2",
+      "name": "bd_a31f",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "scoped": "true",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2022.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "bs_switch": ""
+    },
+    "interface_ports": {
+      "m0_bscan": {
+        "mode": "Master",
+        "vlnv_bus_definition": "xilinx.com:interface:bscan:1.0",
+        "vlnv": "xilinx.com:interface:bscan_rtl:1.0"
+      }
+    },
+    "components": {
+      "bs_switch": {
+        "vlnv": "xilinx.com:ip:bs_switch:1.0",
+        "xci_name": "bd_a31f_bs_switch_0",
+        "xci_path": "ip/ip_0/bd_a31f_bs_switch_0.xci",
+        "inst_hier_path": "bs_switch",
+        "parameters": {
+          "C_NUM_BS_MASTER": {
+            "value": "1"
+          },
+          "C_ONLY_PRIMITIVE": {
+            "value": "false"
+          },
+          "C_USER_SCAN_CHAIN": {
+            "value": "1"
+          },
+          "C_USE_EXT_BSCAN": {
+            "value": "false"
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "bs_switch_m0_bscan": {
+        "interface_ports": [
+          "m0_bscan",
+          "bs_switch/m0_bscan"
+        ]
+      }
+    }
+  }
+}

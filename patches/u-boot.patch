@@ -1,0 +1,22 @@
+diff --git a/arch/riscv/Kconfig b/arch/riscv/Kconfig
+index ba29e70acf..f029e7573a 100644
+--- a/arch/riscv/Kconfig
++++ b/arch/riscv/Kconfig
+@@ -24,6 +24,9 @@ config TARGET_SIFIVE_UNMATCHED
+ 	bool "Support SiFive Unmatched Board"
+ 	select SYS_CACHE_SHIFT_6
+ 
++config TARGET_RISCV_ML
++	bool "Enable RISC-V for ML"
++
+ config TARGET_SIPEED_MAIX
+ 	bool "Support Sipeed Maix Board"
+ 	select SYS_CACHE_SHIFT_6
+@@ -61,6 +64,7 @@ config SPL_SYS_DCACHE_OFF
+ source "board/AndesTech/ax25-ae350/Kconfig"
+ source "board/emulation/qemu-riscv/Kconfig"
+ source "board/microchip/mpfs_icicle/Kconfig"
++source "board/xilinx/riscv_ml/Kconfig"
+ source "board/sifive/unleashed/Kconfig"
+ source "board/sifive/unmatched/Kconfig"
+ source "board/openpiton/riscv64/Kconfig"
