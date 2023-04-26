@@ -23,7 +23,6 @@ make -C linux ARCH=riscv CROSS_COMPILE=${CROSS_COMPILE_LINUX} oldconfig
 make -C linux ARCH=riscv CROSS_COMPILE=${CROSS_COMPILE_LINUX} all
 
 
-exit 1
 ### u-boot
 cd u-boot
 git reset --hard HEAD && git clean -d -f  && git pull
