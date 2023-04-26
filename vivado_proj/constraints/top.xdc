@@ -10,7 +10,7 @@ set_property BITSTREAM.CONFIG.CONFIGRATE 33 [current_design]
 #set_property CFGBVS VCCO [current_design]
 
 ## Clock Signal
-set_property -dict {PACKAGE_PIN M21 IOSTANDARD LVCMOS33} [get_ports sys_clock]
+set_property -dict {PACKAGE_PIN F22 IOSTANDARD LVCMOS33} [get_ports sys_clock]
 #set_property CLOCK_DEDICATED_ROUTE BACKBONE [get_nets -of_objects [get_ports sys_clock]]
 #create_clock -period 20.000 -name sys_clk_pin [get_ports sys_clock]
 

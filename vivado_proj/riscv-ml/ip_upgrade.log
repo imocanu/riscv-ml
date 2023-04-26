@@ -1,0 +1,786 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Mar 19 16:31:39 2023
+| Host         : optiplex running 64-bit Ubuntu 22.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7k325tffg676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'riscv_xlconcat_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of riscv_xlconcat_0_0 (xilinx.com:ip:xlconcat:2.1 (Rev. 4)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Mar 19 16:31:39 2023
+| Host         : optiplex running 64-bit Ubuntu 22.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7k325tffg676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'riscv_util_vector_logic_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of riscv_util_vector_logic_0_0 (xilinx.com:ip:util_vector_logic:2.0 (Rev. 2)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Mar 19 16:31:38 2023
+| Host         : optiplex running 64-bit Ubuntu 22.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7k325tffg676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'riscv_mig_7series_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the conversion of riscv_mig_7series_0_0 (xilinx.com:ip:mig_7series:4.2 (Rev. 1)) to Vivado generation flows.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Warnings
+-----------
+
+WARNING: The upgraded user parameter set contained parameters that could not be mapped on to the upgraded IP. When checking the upgrade script, note that parameter names are case sensitive.
+
+
+3. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'riscv_mig_7series_0_0'.
+
+
+-Upgrade has removed interface 'CLK_REF_I'
+
+-Upgrade has removed interface 'CLOCK'
+
+-Upgrade has removed interface 'DDR2_RESET'
+
+-Upgrade has removed interface 'DDR3'
+
+-Upgrade has removed interface 'DDR3_RESET'
+
+-Upgrade has removed interface 'LPDDR2_RESET'
+
+-Upgrade has removed interface 'MMCM_CLKOUT0'
+
+-Upgrade has removed interface 'MMCM_CLKOUT1'
+
+-Upgrade has removed interface 'MMCM_CLKOUT2'
+
+-Upgrade has removed interface 'MMCM_CLKOUT3'
+
+-Upgrade has removed interface 'MMCM_CLKOUT4'
+
+-Upgrade has removed interface 'QDRIIP_RESET'
+
+-Upgrade has removed interface 'RESET'
+
+-Upgrade has removed interface 'RLDIII_RESET'
+
+-Upgrade has removed interface 'RLDII_RESET'
+
+-Upgrade has removed interface 'SYS_CLK_I'
+
+-Upgrade has removed interface 'S_AXI'
+
+-Upgrade has added interface 'CLK_REF' (xilinx.com:interface:diff_clock:1.0)
+
+
+4. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'riscv_mig_7series_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'aresetn'
+
+-Upgrade has removed port 'clk_ref_i'
+
+-Upgrade has removed port 'ddr3_addr'
+
+-Upgrade has removed port 'ddr3_ba'
+
+-Upgrade has removed port 'ddr3_cas_n'
+
+-Upgrade has removed port 'ddr3_ck_n'
+
+-Upgrade has removed port 'ddr3_ck_p'
+
+-Upgrade has removed port 'ddr3_cke'
+
+-Upgrade has removed port 'ddr3_dm'
+
+-Upgrade has removed port 'ddr3_dq'
+
+-Upgrade has removed port 'ddr3_dqs_n'
+
+-Upgrade has removed port 'ddr3_dqs_p'
+
+-Upgrade has removed port 'ddr3_odt'
+
+-Upgrade has removed port 'ddr3_ras_n'
+
+-Upgrade has removed port 'ddr3_reset_n'
+
+-Upgrade has removed port 'ddr3_we_n'
+
+-Upgrade has removed port 'init_calib_complete'
+
+-Upgrade has removed port 'mmcm_locked'
+
+-Upgrade has removed port 's_axi_araddr'
+
+-Upgrade has removed port 's_axi_arburst'
+
+-Upgrade has removed port 's_axi_arcache'
+
+-Upgrade has removed port 's_axi_arid'
+
+-Upgrade has removed port 's_axi_arlen'
+
+-Upgrade has removed port 's_axi_arlock'
+
+-Upgrade has removed port 's_axi_arprot'
+
+-Upgrade has removed port 's_axi_arqos'
+
+-Upgrade has removed port 's_axi_arready'
+
+-Upgrade has removed port 's_axi_arsize'
+
+-Upgrade has removed port 's_axi_arvalid'
+
+-Upgrade has removed port 's_axi_awaddr'
+
+-Upgrade has removed port 's_axi_awburst'
+
+-Upgrade has removed port 's_axi_awcache'
+
+-Upgrade has removed port 's_axi_awid'
+
+-Upgrade has removed port 's_axi_awlen'
+
+-Upgrade has removed port 's_axi_awlock'
+
+-Upgrade has removed port 's_axi_awprot'
+
+-Upgrade has removed port 's_axi_awqos'
+
+-Upgrade has removed port 's_axi_awready'
+
+-Upgrade has removed port 's_axi_awsize'
+
+-Upgrade has removed port 's_axi_awvalid'
+
+-Upgrade has removed port 's_axi_bid'
+
+-Upgrade has removed port 's_axi_bready'
+
+-Upgrade has removed port 's_axi_bresp'
+
+-Upgrade has removed port 's_axi_bvalid'
+
+-Upgrade has removed port 's_axi_rdata'
+
+-Upgrade has removed port 's_axi_rid'
+
+-Upgrade has removed port 's_axi_rlast'
+
+-Upgrade has removed port 's_axi_rready'
+
+-Upgrade has removed port 's_axi_rresp'
+
+-Upgrade has removed port 's_axi_rvalid'
+
+-Upgrade has removed port 's_axi_wdata'
+
+-Upgrade has removed port 's_axi_wlast'
+
+-Upgrade has removed port 's_axi_wready'
+
+-Upgrade has removed port 's_axi_wstrb'
+
+-Upgrade has removed port 's_axi_wvalid'
+
+-Upgrade has removed port 'sys_clk_i'
+
+-Upgrade has removed port 'ui_clk'
+
+-Upgrade has removed port 'ui_clk_sync_rst'
+
+-Upgrade has added port 'clk_ref_n'
+
+-Upgrade has added port 'clk_ref_p'
+
+
+5. Addressing Information
+-------------------------
+
+Detected addressing differences while upgrading 'riscv_mig_7series_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed address block 'memmap/memaddr'
+
+
+6. Customization warnings
+-------------------------
+
+The normal upgrade process failed due to validation failures in the given configuration. Attempting partial upgrade to set as many user parameters as possible. Please check the parameters whose values were not applied.
+
+Customization errors found on 'riscv_mig_7series_0_0'. Restoring to previous valid configuration.
+
+
+7. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:ip:mig_7series:4.2 -user_name riscv_mig_7series_0_0
+set_property -dict "\
+  CONFIG.ARESETN.INSERT_VIP {0} \
+  CONFIG.ARESETN.POLARITY {ACTIVE_LOW} \
+  CONFIG.BOARD_MIG_PARAM {ddr3_sdram} \
+  CONFIG.C0_ARESETN.INSERT_VIP {0} \
+  CONFIG.C0_ARESETN.POLARITY {ACTIVE_LOW} \
+  CONFIG.C1_ARESETN.INSERT_VIP {0} \
+  CONFIG.C1_ARESETN.POLARITY {ACTIVE_LOW} \
+  CONFIG.C2_ARESETN.INSERT_VIP {0} \
+  CONFIG.C2_ARESETN.POLARITY {ACTIVE_LOW} \
+  CONFIG.C3_ARESETN.INSERT_VIP {0} \
+  CONFIG.C3_ARESETN.POLARITY {ACTIVE_LOW} \
+  CONFIG.C4_ARESETN.INSERT_VIP {0} \
+  CONFIG.C4_ARESETN.POLARITY {ACTIVE_LOW} \
+  CONFIG.C5_ARESETN.INSERT_VIP {0} \
+  CONFIG.C5_ARESETN.POLARITY {ACTIVE_LOW} \
+  CONFIG.C6_ARESETN.INSERT_VIP {0} \
+  CONFIG.C6_ARESETN.POLARITY {ACTIVE_LOW} \
+  CONFIG.C7_ARESETN.INSERT_VIP {0} \
+  CONFIG.C7_ARESETN.POLARITY {ACTIVE_LOW} \
+  CONFIG.CLK_REF_I.ASSOCIATED_BUSIF {} \
+  CONFIG.CLK_REF_I.ASSOCIATED_PORT {} \
+  CONFIG.CLK_REF_I.ASSOCIATED_RESET {} \
+  CONFIG.CLK_REF_I.CLK_DOMAIN {/clk_wiz_0_clk_out1} \
+  CONFIG.CLK_REF_I.FREQ_HZ {200000000} \
+  CONFIG.CLK_REF_I.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.CLK_REF_I.INSERT_VIP {0} \
+  CONFIG.CLK_REF_I.PHASE {0.0} \
+  CONFIG.CLOCK.ASSOCIATED_BUSIF {S_AXI:S_AXI_CTRL} \
+  CONFIG.CLOCK.ASSOCIATED_PORT {} \
+  CONFIG.CLOCK.ASSOCIATED_RESET {aresetn:ui_clk_sync_rst} \
+  CONFIG.CLOCK.CLK_DOMAIN {riscv_mig_7series_0_0_ui_clk} \
+  CONFIG.CLOCK.FREQ_HZ {83333333} \
+  CONFIG.CLOCK.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.CLOCK.INSERT_VIP {0} \
+  CONFIG.CLOCK.PHASE {0} \
+  CONFIG.Component_Name {riscv_mig_7series_0_0} \
+  CONFIG.DDR2_RESET.INSERT_VIP {0} \
+  CONFIG.DDR2_RESET.POLARITY {ACTIVE_HIGH} \
+  CONFIG.DDR3.AXI_ARBITRATION_SCHEME {TDM} \
+  CONFIG.DDR3.BURST_LENGTH {8} \
+  CONFIG.DDR3.CAN_DEBUG {false} \
+  CONFIG.DDR3.CAS_LATENCY {11} \
+  CONFIG.DDR3.CAS_WRITE_LATENCY {11} \
+  CONFIG.DDR3.CS_ENABLED {true} \
+  CONFIG.DDR3.CUSTOM_PARTS {} \
+  CONFIG.DDR3.DATA_MASK_ENABLED {true} \
+  CONFIG.DDR3.DATA_WIDTH {8} \
+  CONFIG.DDR3.MEMORY_PART {} \
+  CONFIG.DDR3.MEMORY_TYPE {COMPONENTS} \
+  CONFIG.DDR3.MEM_ADDR_MAP {ROW_COLUMN_BANK} \
+  CONFIG.DDR3.SLOT {Single} \
+  CONFIG.DDR3.TIMEPERIOD_PS {1250} \
+  CONFIG.DDR3_RESET.INSERT_VIP {0} \
+  CONFIG.DDR3_RESET.POLARITY {ACTIVE_HIGH} \
+  CONFIG.LPDDR2_RESET.INSERT_VIP {0} \
+  CONFIG.LPDDR2_RESET.POLARITY {ACTIVE_HIGH} \
+  CONFIG.MIG_DONT_TOUCH_PARAM {Custom} \
+  CONFIG.MMCM_CLKOUT0.ASSOCIATED_ASYNC_RESET {aresetn} \
+  CONFIG.MMCM_CLKOUT0.ASSOCIATED_BUSIF {} \
+  CONFIG.MMCM_CLKOUT0.ASSOCIATED_PORT {} \
+  CONFIG.MMCM_CLKOUT0.ASSOCIATED_RESET {} \
+  CONFIG.MMCM_CLKOUT0.CLK_DOMAIN {} \
+  CONFIG.MMCM_CLKOUT0.FREQ_HZ {10} \
+  CONFIG.MMCM_CLKOUT0.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.MMCM_CLKOUT0.INSERT_VIP {0} \
+  CONFIG.MMCM_CLKOUT0.PHASE {0} \
+  CONFIG.MMCM_CLKOUT1.ASSOCIATED_ASYNC_RESET {aresetn} \
+  CONFIG.MMCM_CLKOUT1.ASSOCIATED_BUSIF {} \
+  CONFIG.MMCM_CLKOUT1.ASSOCIATED_PORT {} \
+  CONFIG.MMCM_CLKOUT1.ASSOCIATED_RESET {} \
+  CONFIG.MMCM_CLKOUT1.CLK_DOMAIN {} \
+  CONFIG.MMCM_CLKOUT1.FREQ_HZ {10} \
+  CONFIG.MMCM_CLKOUT1.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.MMCM_CLKOUT1.INSERT_VIP {0} \
+  CONFIG.MMCM_CLKOUT1.PHASE {0} \
+  CONFIG.MMCM_CLKOUT2.ASSOCIATED_ASYNC_RESET {aresetn} \
+  CONFIG.MMCM_CLKOUT2.ASSOCIATED_BUSIF {} \
+  CONFIG.MMCM_CLKOUT2.ASSOCIATED_PORT {} \
+  CONFIG.MMCM_CLKOUT2.ASSOCIATED_RESET {} \
+  CONFIG.MMCM_CLKOUT2.CLK_DOMAIN {} \
+  CONFIG.MMCM_CLKOUT2.FREQ_HZ {10} \
+  CONFIG.MMCM_CLKOUT2.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.MMCM_CLKOUT2.INSERT_VIP {0} \
+  CONFIG.MMCM_CLKOUT2.PHASE {0} \
+  CONFIG.MMCM_CLKOUT3.ASSOCIATED_ASYNC_RESET {aresetn} \
+  CONFIG.MMCM_CLKOUT3.ASSOCIATED_BUSIF {} \
+  CONFIG.MMCM_CLKOUT3.ASSOCIATED_PORT {} \
+  CONFIG.MMCM_CLKOUT3.ASSOCIATED_RESET {} \
+  CONFIG.MMCM_CLKOUT3.CLK_DOMAIN {} \
+  CONFIG.MMCM_CLKOUT3.FREQ_HZ {10} \
+  CONFIG.MMCM_CLKOUT3.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.MMCM_CLKOUT3.INSERT_VIP {0} \
+  CONFIG.MMCM_CLKOUT3.PHASE {0} \
+  CONFIG.MMCM_CLKOUT4.ASSOCIATED_ASYNC_RESET {aresetn} \
+  CONFIG.MMCM_CLKOUT4.ASSOCIATED_BUSIF {} \
+  CONFIG.MMCM_CLKOUT4.ASSOCIATED_PORT {} \
+  CONFIG.MMCM_CLKOUT4.ASSOCIATED_RESET {} \
+  CONFIG.MMCM_CLKOUT4.CLK_DOMAIN {} \
+  CONFIG.MMCM_CLKOUT4.FREQ_HZ {10} \
+  CONFIG.MMCM_CLKOUT4.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.MMCM_CLKOUT4.INSERT_VIP {0} \
+  CONFIG.MMCM_CLKOUT4.PHASE {0} \
+  CONFIG.QDRIIP_RESET.INSERT_VIP {0} \
+  CONFIG.QDRIIP_RESET.POLARITY {ACTIVE_HIGH} \
+  CONFIG.RESET.INSERT_VIP {0} \
+  CONFIG.RESET.POLARITY {ACTIVE_HIGH} \
+  CONFIG.RESET_BOARD_INTERFACE {Custom} \
+  CONFIG.RLDIII_RESET.INSERT_VIP {0} \
+  CONFIG.RLDIII_RESET.POLARITY {ACTIVE_HIGH} \
+  CONFIG.RLDII_RESET.INSERT_VIP {0} \
+  CONFIG.RLDII_RESET.POLARITY {ACTIVE_HIGH} \
+  CONFIG.SYSTEM_RESET.BOARD.ASSOCIATED_PARAM {RESET_BOARD_INTERFACE} \
+  CONFIG.SYSTEM_RESET.INSERT_VIP {0} \
+  CONFIG.SYSTEM_RESET.POLARITY {ACTIVE_HIGH} \
+  CONFIG.SYS_CLK_I.ASSOCIATED_BUSIF {} \
+  CONFIG.SYS_CLK_I.ASSOCIATED_PORT {} \
+  CONFIG.SYS_CLK_I.ASSOCIATED_RESET {} \
+  CONFIG.SYS_CLK_I.CLK_DOMAIN {/clk_wiz_0_clk_out1} \
+  CONFIG.SYS_CLK_I.FREQ_HZ {166666666} \
+  CONFIG.SYS_CLK_I.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.SYS_CLK_I.INSERT_VIP {0} \
+  CONFIG.SYS_CLK_I.PHASE {0.0} \
+  CONFIG.S_AXI.ADDR_WIDTH {28} \
+  CONFIG.S_AXI.ARUSER_WIDTH {0} \
+  CONFIG.S_AXI.AWUSER_WIDTH {0} \
+  CONFIG.S_AXI.BUSER_WIDTH {0} \
+  CONFIG.S_AXI.CLK_DOMAIN {riscv_mig_7series_0_0_ui_clk} \
+  CONFIG.S_AXI.DATA_WIDTH {128} \
+  CONFIG.S_AXI.FREQ_HZ {83333333} \
+  CONFIG.S_AXI.HAS_BRESP {1} \
+  CONFIG.S_AXI.HAS_BURST {1} \
+  CONFIG.S_AXI.HAS_CACHE {1} \
+  CONFIG.S_AXI.HAS_LOCK {1} \
+  CONFIG.S_AXI.HAS_PROT {1} \
+  CONFIG.S_AXI.HAS_QOS {1} \
+  CONFIG.S_AXI.HAS_REGION {0} \
+  CONFIG.S_AXI.HAS_RRESP {1} \
+  CONFIG.S_AXI.HAS_WSTRB {1} \
+  CONFIG.S_AXI.ID_WIDTH {4} \
+  CONFIG.S_AXI.INSERT_VIP {0} \
+  CONFIG.S_AXI.MAX_BURST_LENGTH {128} \
+  CONFIG.S_AXI.NUM_READ_OUTSTANDING {8} \
+  CONFIG.S_AXI.NUM_READ_THREADS {1} \
+  CONFIG.S_AXI.NUM_WRITE_OUTSTANDING {8} \
+  CONFIG.S_AXI.NUM_WRITE_THREADS {1} \
+  CONFIG.S_AXI.PHASE {0} \
+  CONFIG.S_AXI.PROTOCOL {AXI4} \
+  CONFIG.S_AXI.READ_WRITE_MODE {READ_WRITE} \
+  CONFIG.S_AXI.RUSER_BITS_PER_BYTE {0} \
+  CONFIG.S_AXI.RUSER_WIDTH {0} \
+  CONFIG.S_AXI.SUPPORTS_NARROW_BURST {0} \
+  CONFIG.S_AXI.WUSER_BITS_PER_BYTE {0} \
+  CONFIG.S_AXI.WUSER_WIDTH {0} \
+  CONFIG.XML_INPUT_FILE {board.prj} " [get_ips riscv_mig_7series_0_0]
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Mar 19 16:31:38 2023
+| Host         : optiplex running 64-bit Ubuntu 22.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7k325tffg676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'riscv_mem_reset_control_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of riscv_mem_reset_control_0_0 (xilinx.com:module_ref:mem_reset_control:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Mar 19 16:31:38 2023
+| Host         : optiplex running 64-bit Ubuntu 22.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7k325tffg676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'riscv_io_axi_s_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of riscv_io_axi_s_0 (xilinx.com:ip:smartconnect:1.0 (Rev. 18)) to Vivado generation flows.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection and Interface Information
+---------------------------------------
+
+Connection and Interface information can not be compared for deferred elaboration IPs.
+riscv_io_axi_s_0 may have connection or interface changes.
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Mar 19 16:31:38 2023
+| Host         : optiplex running 64-bit Ubuntu 22.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7k325tffg676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'riscv_io_axi_m_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of riscv_io_axi_m_0 (xilinx.com:ip:smartconnect:1.0 (Rev. 18)) to Vivado generation flows.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection and Interface Information
+---------------------------------------
+
+Connection and Interface information can not be compared for deferred elaboration IPs.
+riscv_io_axi_m_0 may have connection or interface changes.
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Mar 19 16:31:38 2023
+| Host         : optiplex running 64-bit Ubuntu 22.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7k325tffg676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'riscv_clk_wiz_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of riscv_clk_wiz_0_0 (xilinx.com:ip:clk_wiz:6.0 (Rev. 10)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Mar 19 16:31:38 2023
+| Host         : optiplex running 64-bit Ubuntu 22.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7k325tffg676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'riscv_axi_smc_1_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of riscv_axi_smc_1_0 (xilinx.com:ip:smartconnect:1.0 (Rev. 18)) to Vivado generation flows.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection and Interface Information
+---------------------------------------
+
+Connection and Interface information can not be compared for deferred elaboration IPs.
+riscv_axi_smc_1_0 may have connection or interface changes.
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Mar 19 16:31:38 2023
+| Host         : optiplex running 64-bit Ubuntu 22.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7k325tffg676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'riscv_axi_quad_spi_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the conversion of riscv_axi_quad_spi_0_0 (xilinx.com:ip:axi_quad_spi:3.2 (Rev. 25)) to Vivado generation flows.
+
+After upgrade, an IP may have parameter differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality.
+
+2. Customization warnings
+-------------------------
+
+The normal upgrade process failed due to validation failures in the given configuration. Attempting partial upgrade to set as many user parameters as possible. Please check the parameters whose values were not applied.
+
+Unable to set the value 'qspi_flash' on parameter 'QSPI Board Interface' due to the following failure - 
+Value 'qspi_flash' is out of the range for parameter 'QSPI Board Interface(QSPI_BOARD_INTERFACE)' for BD Cell 'riscv_axi_quad_spi_0_0' . Valid values are - Custom
+. Restoring to an old valid value of 'Custom'
+
+
+3. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:ip:axi_quad_spi:3.2 -user_name riscv_axi_quad_spi_0_0
+set_property -dict "\
+  CONFIG.AXI_LITE.ADDR_WIDTH {7} \
+  CONFIG.AXI_LITE.ARUSER_WIDTH {0} \
+  CONFIG.AXI_LITE.AWUSER_WIDTH {0} \
+  CONFIG.AXI_LITE.BUSER_WIDTH {0} \
+  CONFIG.AXI_LITE.CLK_DOMAIN {/clk_wiz_0_clk_out1} \
+  CONFIG.AXI_LITE.DATA_WIDTH {32} \
+  CONFIG.AXI_LITE.FREQ_HZ {80000000} \
+  CONFIG.AXI_LITE.HAS_BRESP {1} \
+  CONFIG.AXI_LITE.HAS_BURST {0} \
+  CONFIG.AXI_LITE.HAS_CACHE {0} \
+  CONFIG.AXI_LITE.HAS_LOCK {0} \
+  CONFIG.AXI_LITE.HAS_PROT {0} \
+  CONFIG.AXI_LITE.HAS_QOS {0} \
+  CONFIG.AXI_LITE.HAS_REGION {0} \
+  CONFIG.AXI_LITE.HAS_RRESP {1} \
+  CONFIG.AXI_LITE.HAS_WSTRB {1} \
+  CONFIG.AXI_LITE.ID_WIDTH {0} \
+  CONFIG.AXI_LITE.INSERT_VIP {0} \
+  CONFIG.AXI_LITE.MAX_BURST_LENGTH {1} \
+  CONFIG.AXI_LITE.NUM_READ_OUTSTANDING {2} \
+  CONFIG.AXI_LITE.NUM_READ_THREADS {1} \
+  CONFIG.AXI_LITE.NUM_WRITE_OUTSTANDING {2} \
+  CONFIG.AXI_LITE.NUM_WRITE_THREADS {1} \
+  CONFIG.AXI_LITE.PHASE {0.0} \
+  CONFIG.AXI_LITE.PROTOCOL {AXI4LITE} \
+  CONFIG.AXI_LITE.READ_WRITE_MODE {READ_WRITE} \
+  CONFIG.AXI_LITE.RUSER_BITS_PER_BYTE {0} \
+  CONFIG.AXI_LITE.RUSER_WIDTH {0} \
+  CONFIG.AXI_LITE.SUPPORTS_NARROW_BURST {0} \
+  CONFIG.AXI_LITE.WUSER_BITS_PER_BYTE {0} \
+  CONFIG.AXI_LITE.WUSER_WIDTH {0} \
+  CONFIG.Async_Clk {0} \
+  CONFIG.C_BYTE_LEVEL_INTERRUPT_EN {0} \
+  CONFIG.C_DUAL_QUAD_MODE {0} \
+  CONFIG.C_FAMILY {artix7} \
+  CONFIG.C_FIFO_DEPTH {16} \
+  CONFIG.C_INSTANCE {axi_quad_spi_inst} \
+  CONFIG.C_NUM_SS_BITS {1} \
+  CONFIG.C_NUM_TRANSFER_BITS {8} \
+  CONFIG.C_SCK_RATIO {2} \
+  CONFIG.C_SCK_RATIO1 {1} \
+  CONFIG.C_SELECT_XPM {0} \
+  CONFIG.C_SHARED_STARTUP {0} \
+  CONFIG.C_SPI_MEMORY {2} \
+  CONFIG.C_SPI_MEM_ADDR_BITS {24} \
+  CONFIG.C_SPI_MODE {2} \
+  CONFIG.C_SUB_FAMILY {artix7} \
+  CONFIG.C_S_AXI4_BASEADDR {0xFFFFFFFF} \
+  CONFIG.C_S_AXI4_HIGHADDR {0x00000000} \
+  CONFIG.C_S_AXI4_ID_WIDTH {0} \
+  CONFIG.C_TYPE_OF_AXI4_INTERFACE {0} \
+  CONFIG.C_USE_STARTUP {0} \
+  CONFIG.C_USE_STARTUP_INT {0} \
+  CONFIG.C_XIP_MODE {0} \
+  CONFIG.C_XIP_PERF_MODE {1} \
+  CONFIG.Component_Name {riscv_axi_quad_spi_0_0} \
+  CONFIG.FIFO_INCLUDED {1} \
+  CONFIG.Master_mode {1} \
+  CONFIG.Multiples16 {1} \
+  CONFIG.QSPI_BOARD_INTERFACE {qspi_flash} \
+  CONFIG.SPI_0.BOARD.ASSOCIATED_PARAM {QSPI_BOARD_INTERFACE} \
+  CONFIG.UC_FAMILY {0} \
+  CONFIG.USE_BOARD_FLOW {true} \
+  CONFIG.interrupt.PortWidth {1} \
+  CONFIG.interrupt.SENSITIVITY {EDGE_RISING} \
+  CONFIG.lite_clk.ASSOCIATED_BUSIF {AXI_LITE} \
+  CONFIG.lite_clk.ASSOCIATED_PORT {} \
+  CONFIG.lite_clk.ASSOCIATED_RESET {s_axi_aresetn} \
+  CONFIG.lite_clk.CLK_DOMAIN {/clk_wiz_0_clk_out1} \
+  CONFIG.lite_clk.FREQ_HZ {80000000} \
+  CONFIG.lite_clk.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.lite_clk.INSERT_VIP {0} \
+  CONFIG.lite_clk.PHASE {0.0} \
+  CONFIG.lite_reset.INSERT_VIP {0} \
+  CONFIG.lite_reset.POLARITY {ACTIVE_LOW} \
+  CONFIG.spi_clk.ASSOCIATED_BUSIF {SPI_0} \
+  CONFIG.spi_clk.ASSOCIATED_PORT {} \
+  CONFIG.spi_clk.ASSOCIATED_RESET {} \
+  CONFIG.spi_clk.CLK_DOMAIN {/clk_wiz_0_clk_out1} \
+  CONFIG.spi_clk.FREQ_HZ {80000000} \
+  CONFIG.spi_clk.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.spi_clk.INSERT_VIP {0} \
+  CONFIG.spi_clk.PHASE {0.0} " [get_ips riscv_axi_quad_spi_0_0]
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Mar 19 16:31:38 2023
+| Host         : optiplex running 64-bit Ubuntu 22.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7k325tffg676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'riscv_UART_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of riscv_UART_0 (xilinx.com:module_ref:uart:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Mar 19 16:31:38 2023
+| Host         : optiplex running 64-bit Ubuntu 22.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7k325tffg676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'riscv_SD_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of riscv_SD_0 (xilinx.com:module_ref:sdc_controller:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Mar 19 16:31:37 2023
+| Host         : optiplex running 64-bit Ubuntu 22.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7k325tffg676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'riscv_RocketChip_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of riscv_RocketChip_0 (xilinx.com:module_ref:Rocket64b1j:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Mar 19 16:31:37 2023
+| Host         : optiplex running 64-bit Ubuntu 22.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7k325tffg676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'riscv_JTAG_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of riscv_JTAG_0 (xilinx.com:module_ref:bscan2jtag:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Mar 19 16:31:37 2023
+| Host         : optiplex running 64-bit Ubuntu 22.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7k325tffg676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'riscv_BSCAN_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of riscv_BSCAN_0 (xilinx.com:ip:debug_bridge:3.0 (Rev. 8)) to Vivado generation flows.
+

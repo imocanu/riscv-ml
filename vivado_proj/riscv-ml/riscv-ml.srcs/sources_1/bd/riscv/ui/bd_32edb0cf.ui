@@ -1,0 +1,60 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.661039",
+   "Default View_TopLeft":"-230,-11",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port ddr3_sdram -pg 1 -lvl 5 -x 1350 -y 130 -defaultsOSRD
+preplace port qspi_flash -pg 1 -lvl 5 -x 1350 -y 550 -defaultsOSRD
+preplace port port-id_reset -pg 1 -lvl 0 -x 0 -y 370 -defaultsOSRD
+preplace port port-id_sdio_cd -pg 1 -lvl 0 -x 0 -y 660 -defaultsOSRD
+preplace port port-id_sdio_clk -pg 1 -lvl 5 -x 1350 -y 650 -defaultsOSRD
+preplace port port-id_sdio_cmd -pg 1 -lvl 5 -x 1350 -y 670 -defaultsOSRD
+preplace port port-id_sdio_reset -pg 1 -lvl 5 -x 1350 -y 710 -defaultsOSRD
+preplace port port-id_sys_clock -pg 1 -lvl 0 -x 0 -y 510 -defaultsOSRD
+preplace port port-id_usb_uart_rxd -pg 1 -lvl 0 -x 0 -y 610 -defaultsOSRD
+preplace port port-id_usb_uart_txd -pg 1 -lvl 5 -x 1350 -y 610 -defaultsOSRD
+preplace portBus sdio_dat -pg 1 -lvl 5 -x 1350 -y 690 -defaultsOSRD
+preplace inst DDR -pg 1 -lvl 4 -x 1170 -y 140 -defaultsOSRD
+preplace inst IO -pg 1 -lvl 4 -x 1170 -y 620 -defaultsOSRD
+preplace inst BSCAN -pg 1 -lvl 1 -x 110 -y 270 -defaultsOSRD
+preplace inst JTAG -pg 1 -lvl 2 -x 360 -y 270 -defaultsOSRD
+preplace inst RocketChip -pg 1 -lvl 3 -x 780 -y 320 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 2 -x 360 -y 510 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 2 -x 360 -y 370 -defaultsOSRD
+preplace inst rst_sys_clock_50M -pg 1 -lvl 3 -x 780 -y 570 -defaultsOSRD
+preplace netloc AXI_clock 1 2 2 510 110 1000
+preplace netloc AXI_reset 1 3 1 1010 90n
+preplace netloc DDR_mem_ok 1 2 3 580 140 990J 280 1330
+preplace netloc IO_interrupts 1 2 3 590 450 NJ 450 1330
+preplace netloc IO_sdio_cd 1 0 4 20J 670 NJ 670 NJ 670 1030J
+preplace netloc IO_sdio_clk 1 4 1 NJ 650
+preplace netloc IO_sdio_cmd 1 4 1 NJ 670
+preplace netloc IO_sdio_dat 1 4 1 NJ 690
+preplace netloc IO_sdio_reset 1 4 1 NJ 710
+preplace netloc IO_uart_rxd 1 0 5 NJ 610 200J 660 550J 680 1020J 470 1310
+preplace netloc IO_uart_txd 1 4 1 NJ 610
+preplace netloc clk_ref_200_1 1 2 2 520 120 1030
+preplace netloc clk_wiz_0_clk_out3 1 2 2 560 470 960J
+preplace netloc clock_ok 1 2 2 530 150 NJ
+preplace netloc reset_h 1 2 2 560 130 1020J
+preplace netloc reset_l 1 0 3 NJ 370 210J 210 540
+preplace netloc sys_clk_166_1 1 2 2 550 170 NJ
+preplace netloc sys_clock_1 1 0 4 NJ 510 210J 610 570 180 980
+preplace netloc rst_sys_clock_50M_peripheral_reset 1 3 1 980J 230n
+preplace netloc BSCAN 1 1 1 NJ 270
+preplace netloc DDR_ddr3_sdram 1 4 1 NJ 130
+preplace netloc IO_qspi_flash 1 4 1 NJ 550
+preplace netloc JTAG 1 2 1 NJ 270
+preplace netloc MEM_AXI4 1 3 1 960 50n
+preplace netloc io_axi_m 1 2 3 590 190 970J 290 1320
+preplace netloc io_axi_s 1 3 1 970 320n
+levelinfo -pg 1 0 110 360 780 1170 1350
+pagesize -pg 1 -db -bbox -sgen -150 -10 1500 760
+"
+}
+{
+   "da_board_cnt":"1",
+   "da_clkrst_cnt":"1"
+}
